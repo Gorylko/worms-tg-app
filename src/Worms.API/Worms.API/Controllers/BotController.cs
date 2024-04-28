@@ -12,8 +12,8 @@ public class BotController : ControllerBase
     public async Task<IActionResult> ExecuteAsync(JsonDocument updateData)
     {
         var chatId = updateData.RootElement.GetProperty("message").GetProperty("chat").GetProperty("id").GetInt64();
-        var client = new TelegramBotClient("token");
-        await client.SendTextMessageAsync(chatId, "message");
+        var client = new TelegramBotClient("6826442783:AAG3S9sEfa12d0GlwuSPbuyE9PXhAIKbBSQ");
+        await client.SendTextMessageAsync(chatId, "Roma loh?");
 
         return Ok();
     }
