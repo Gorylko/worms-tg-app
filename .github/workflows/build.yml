@@ -18,13 +18,9 @@ jobs:
       with:
         dotnet-version: 8.0.x
 
-    - name: show directory
-      run: |
-        cd ..
-        ls -A
     - name: Restore dependencies
-      run: dotnet restore ../../src/Worms.API/Worms.API.sln
+      run: dotnet restore ../worms-tg-app/src/Worms.API/Worms.API.sln
     - name: Build
-      run: dotnet build ../../src/Worms.API --no-restore
+      run: dotnet build ../worms-tg-app/src/Worms.API --no-restore
     - name: Test
-      run: dotnet test ../../src/Worms.API --no-build --verbosity normal
+      run: dotnet test ../worms-tg-app/src/Worms.API --no-build --verbosity normal
