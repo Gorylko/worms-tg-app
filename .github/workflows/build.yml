@@ -2,9 +2,9 @@ name: build
 
 on:
   push:
-    branches: [ "build_deploy" ]
+    branches: [ "feature/build_deploy" ]
   pull_request:
-    branches: [ "develop" ]
+    branches: [ "feature/build_deploy" ]
 
 jobs:
   build:
