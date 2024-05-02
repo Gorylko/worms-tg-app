@@ -20,7 +20,7 @@ jobs:
 
     - name: show directory
       run: |
-        cd ../..
+        cd ..
         ls -A
     - name: Restore dependencies
       run: dotnet restore ../../src/Worms.API/Worms.API.sln
