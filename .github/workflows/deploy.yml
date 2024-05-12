@@ -24,20 +24,20 @@ jobs:
         dotnet-version: 8.0.x
 
     - name: Restore dependencies
-      run: dotnet restore ${{ env.SOLUTION_PATH }}/Worms.API.sln
+      run: dotnet restore ${{ env.SOLUTION_PATH }}
     - name: Build
       run: dotnet build ${{ env.SOLUTION_PATH }} --no-restore
     - name: Test
       run: dotnet test ${{ env.SOLUTION_PATH }} --no-build --verbosity normal
 
     - name: Publish
-      run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+      run: dotnet publish -c Release -o ${{ env.SOLUTION_PATH }}
 
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
         name: .net-app
-        path: ${{env.DOTNET_ROOT}}/myapp
+        path: ${{ env.SOLUTION_PATH }}
 
   deploy:
     permissions:
