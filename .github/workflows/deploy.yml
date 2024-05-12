@@ -7,9 +7,9 @@ env:
 
 on:
   push:
-    branches: [ "feature/build_deploy" ]
+    branches: [ "develop" ]
   pull_request:
-    branches: [ "feature/build_deploy" ]
+    branches: [ "develop" ]
 
 jobs:
   build:
