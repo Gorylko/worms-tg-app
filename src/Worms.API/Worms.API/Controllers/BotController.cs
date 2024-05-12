@@ -9,13 +9,21 @@ namespace Worms.API.Controllers;
 [ApiController]
 public class BotController : ControllerBase
 {
+    private readonly ITelegramBotClient _botClient;
+
+    public BotController(ITelegramBotClient botClient)
+    {
+        _botClient = botClient;
+    }
+
     [HttpPost("update")]
     public async Task<IActionResult> ExecuteAsync(JsonDocument updateData)
     {
         var chatId = updateData.RootElement.GetProperty("message").GetProperty("chat").GetProperty("id").GetInt64();
-        var client = new TelegramBotClient("6826442783:AAG3S9sEfa12d0GlwuSPbuyE9PXhAIKbBSQ");
-        await client.SendTextMessageAsync(chatId, "Roma loh?", replyMarkup: new InlineKeyboardMarkup(
-            new InlineKeyboardButton[]{ new("Da") { CallbackData = "yes" }, new("Net") { CallbackData = "no" } }));
+
+        await _botClient.SendTextMessageAsync(chatId, "a?", replyMarkup:
+            new InlineKeyboardMarkup(
+                new InlineKeyboardButton[]{ new("Yep") { CallbackData = "yes" }, new("Nope") { CallbackData = "no" } }));
 
         return Ok();
     }

@@ -1,3 +1,7 @@
+using FluentValidation;
+using Worms.API.Extensions;
+using Worms.API.Settings;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services
@@ -5,13 +9,16 @@ builder.Services
     .AddSwaggerGen()
     .AddControllers();
 
+builder.Services
+    .AddValidatorsFromAssemblyContaining<Program>()
+    .RegisterConfigOptions<BotConfigurationSettings>(BotConfigurationSettings.SectionName)
+    .AddTelegramBot();
+
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment() || !app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app
+    .UseSwagger()
+    .UseSwaggerUI();
 
 app.UseHttpsRedirection();
 app.MapControllers();
