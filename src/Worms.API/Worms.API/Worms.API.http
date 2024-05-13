@@ -1,0 +1,6 @@
+@Worms.API_HostAddress = http://localhost:5275
+
+GET {{Worms.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
