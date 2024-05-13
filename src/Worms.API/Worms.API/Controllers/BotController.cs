@@ -1,9 +1,9 @@
-﻿using System.Text.Json;
+﻿namespace Worms.API.Controllers;
+
+using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
 using Telegram.Bot;
 using Telegram.Bot.Types.ReplyMarkups;
-
-namespace Worms.API.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]

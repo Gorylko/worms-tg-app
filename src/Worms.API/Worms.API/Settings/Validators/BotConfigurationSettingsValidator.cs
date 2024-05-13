@@ -1,6 +1,6 @@
-﻿using FluentValidation;
+﻿namespace Worms.API.Settings.Validators;
 
-namespace Worms.API.Settings.Validators;
+using FluentValidation;
 
 public class BotConfigurationSettingsValidator : AbstractValidator<BotConfigurationSettings>
 {

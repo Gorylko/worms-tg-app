@@ -1,7 +1,7 @@
-﻿using FluentValidation;
-using Microsoft.Extensions.Options;
+﻿namespace Worms.API.Extensions.Options;
 
-namespace Worms.API.Extensions.Options;
+using FluentValidation;
+using Microsoft.Extensions.Options;
 
 public class FluentValidationOptions<TOptions> : IValidateOptions<TOptions>
     where TOptions : class

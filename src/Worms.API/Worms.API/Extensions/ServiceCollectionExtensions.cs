@@ -1,8 +1,8 @@
-﻿using Microsoft.Extensions.Options;
+﻿namespace Worms.API.Extensions;
+
+using Microsoft.Extensions.Options;
 using Telegram.Bot;
 using Worms.API.Settings;
-
-namespace Worms.API.Extensions;
 
 public static class ServiceCollectionExtensions
 {

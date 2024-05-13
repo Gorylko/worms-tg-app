@@ -1,7 +1,7 @@
-﻿using Microsoft.Extensions.Options;
-using Worms.API.Extensions.Options;
+﻿namespace Worms.API.Extensions;
 
-namespace Worms.API.Extensions;
+using Microsoft.Extensions.Options;
+using Worms.API.Extensions.Options;
 
 public static class OptionBuilderExtensions
 {
