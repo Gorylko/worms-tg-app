@@ -11,7 +11,7 @@ builder.Services
 
 builder.Services
     .AddValidatorsFromAssemblyContaining<Program>()
-    .RegisterConfigOptions<BotConfigurationSettings>(BotConfigurationSettings.SectionName)
+    .AddConfigOptions<BotConfigurationSettings>(BotConfigurationSettings.SectionName)
     .AddTelegramBot();
 
 var app = builder.Build();

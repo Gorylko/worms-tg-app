@@ -17,7 +17,7 @@ public static class ServiceCollectionExtensions
         return services;
     }
     
-    public static IServiceCollection RegisterConfigOptions<TSettings>(this IServiceCollection services, string sectionName)
+    public static IServiceCollection AddConfigOptions<TSettings>(this IServiceCollection services, string sectionName)
         where TSettings : class
     {
         services.AddOptions<TSettings>()
