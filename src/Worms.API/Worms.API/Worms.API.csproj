@@ -1,5 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
+    <PropertyGroup>
+      <UserSecretsId>1075a10f-73fa-49c7-a362-de6fda65aca1</UserSecretsId>
+    </PropertyGroup>
+
     <ItemGroup>
         <PackageReference Include="FluentValidation" />
         <PackageReference Include="FluentValidation.DependencyInjectionExtensions" />
